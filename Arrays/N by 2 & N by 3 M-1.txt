@@ -20,6 +20,7 @@ public:
                 counter=1;
             }
         }
-        return nums[ansIndex];
+        return nums[ansIndex];  
+        // If the question does not ensures that at least one number will be greater than n/2 or n/3 then you have to check it by iterating a loop.
     }
 };
