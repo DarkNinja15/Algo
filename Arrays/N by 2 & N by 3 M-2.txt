@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int> map;
+	for(int i=0;i<nums.size();i++)
+	{
+		auto it = map.find(nums[i]);
+		if(it==map.end())
+		{
+			map.insert(pair<int,int>(nums[i],1));
+		}
+		else
+		{
+			map[nums[i]]+=1;
+		}
+	}
+        int n = nums.size();
+        n=n/2;
+        int l;
+        for(auto it=map.begin();it!=map.end();++it)
+        {
+            int v = it->second;
+            if(v>n)
+            {
+                l=it->first;
+                break;
+            }
+        }
+        return l;
+    }
+};
